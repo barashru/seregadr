@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения, Серёжа!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background: #ff4081;
+            color: white;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        nav {
+            background: #e91e63;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 30px 15px;
+        }
+        .photos img, .gifs img {
+            width: 90%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        blockquote {
+            font-style: italic;
+            font-size: 1.3em;
+            color: #555;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .bio {
+            background: #fff5f8;
+        }
+        .video-section iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+        }
+        audio {
+            margin-top: 20px;
+        }
+        footer {
+            background: #ff4081;
+            color: white;
+            padding: 20px;
+            font-size: 1em;
+        }
+        @media (min-width: 600px) {
+            .photos img, .gifs img {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>С Днём Рождения, Серёжа!</h1>
+    <p>Ты самый крутой! Желаем радости, здоровья и приключений! 🎉</p>
+</header>
+
+<nav>
+    <a href="#photos">Фото</a>
+    <a href="#gifs">GIF</a>
+    <a href="#quote">Цитата</a>
+    <a href="#bio">О тебе</a>
+    <a href="#video">Видео</a>
+    <a href="#music">Музыка</a>
+</nav>
+
+<section id="photos" class="photos">
+    <h2>📸 Фото</h2>
+    <img src="images/photo1.jpg" alt="Фото 1">
+    <img src="images/photo2.jpg" alt="Фото 2">
+</section>
+
+<section id="gifs" class="gifs">
+    <h2>🎉 GIF-приколы</h2>
+    <img src="images/gif1.gif" alt="GIF 1">
+    <img src="images/gif2.gif" alt="GIF 2">
+</section>
+
+<section id="quote">
+    <blockquote>«Живи ярко, смейся громко и всегда будь собой!»</blockquote>
+</section>
+
+<section id="bio" class="bio">
+    <h2>👤 Кто такой Серёжа?</h2>
+    <p>Серёжа — душа компании, шашлычный мастер, мемолог и верный друг. Желаем тебе новых побед, весёлых дней и настоящего кайфа от жизни!</p>
+</section>
+
+<section id="video" class="video-section">
+    <h2>🎬 Видео</h2>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+</section>
+
+<section id="music">
+    <h2>🎵 Музыка</h2>
+    <audio controls autoplay loop>
+        <source src="music/theme.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+</section>
+
+<footer>
+    <p>С любовью от друзей ❤️</p>
+</footer>
+
+</body>
+</html>
