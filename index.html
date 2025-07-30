@@ -2,236 +2,207 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>С Днём Рождения, Серёжа!</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
-      color: #333;
+      padding: 0;
       text-align: center;
-      overflow-x: hidden;
     }
     header {
-      background: #ff4081;
+      background-color: #ff4081;
       color: white;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 2em;
-      animation: blink 1.5s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
+      padding: 30px 20px;
     }
     nav {
       background: #e91e63;
-      padding: 10px 0;
+      padding: 10px;
     }
     nav a {
       color: white;
-      margin: 0 12px;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1em;
     }
     section {
-      padding: 25px 10px;
+      padding: 30px 10px;
     }
-    .photos img, .gifs img {
-      width: 100%;
-      max-width: 320px;
-      margin: 10px auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    blockquote {
-      font-style: italic;
-      font-size: 1.2em;
-      color: #555;
+    img {
+      width: 300px;
       max-width: 90%;
-      margin: 20px auto;
+      border-radius: 15px;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .bio {
-      background: #fff5f8;
-    }
-    .video-section iframe {
-      width: 100%;
-      max-width: 560px;
+    iframe {
+      width: 560px;
       height: 315px;
+      max-width: 100%;
       border: none;
+      margin-top: 20px;
     }
     audio {
       margin-top: 20px;
-      width: 90%;
-      max-width: 400px;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 1em;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
     }
     footer {
-      background: #ff4081;
+      background-color: #ff4081;
       color: white;
       padding: 20px;
-      font-size: 1em;
     }
-    /* Telegram кнопка */
-    .telegram-button {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: #0088cc;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2em;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      margin-top: 20px;
-    }
-    /* Конфетти */
-    .confetti {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+        padding: 10px;
+      }
+      button {
+        width: 90%;
+        font-size: 1.1em;
+      }
     }
   </style>
 </head>
 <body>
 
-<canvas class="confetti" id="confetti-canvas"></canvas>
+  <header>
+    <h1>С Днём Рождения, Серёжа! 🎉</h1>
+    <p>Желаем тебе удачи, вдохновения и шашлыков!</p>
+  </header>
 
-<header>
-  <h1>С Днём Рождения, Серёжа!</h1>
-  <p>Ты самый крутой! Желаем радости, здоровья и приключений! 🎉</p>
-</header>
+  <nav>
+    <a href="#photos">Фото</a>
+    <a href="#gifs">GIF</a>
+    <a href="#quote">Цитата</a>
+    <a href="#video">Видео</a>
+    <a href="#music">Музыка</a>
+    <a href="#gift">Подарок</a>
+  </nav>
 
-<nav>
-  <a href="#photos">Фото</a>
-  <a href="#gifs">GIF</a>
-  <a href="#quote">Цитата</a>
-  <a href="#bio">О тебе</a>
-  <a href="#video">Видео</a>
-  <a href="#music">Музыка</a>
-</nav>
+  <section id="photos">
+    <h2>📸 Фото</h2>
+    <img src="images/photo1.jpg" alt="Фото 1" />
+    <img src="images/photo2.jpg" alt="Фото 2" />
+  </section>
 
-<section id="photos" class="photos">
-  <h2>📸 Фото</h2>
-  <img src="https://i.imgur.com/YJVHcTP.png" alt="Фото 1" />
-  <img src="https://i.imgur.com/KMQH5Ne.jpg" alt="Фото 2" />
-</section>
+  <section id="gifs">
+    <h2>🎞 GIF</h2>
+    <img src="images/party.gif" alt="Праздник" />
+    <img src="images/fun.gif" alt="Веселье" />
+  </section>
 
-<section id="gifs" class="gifs">
-  <h2>🎉 GIF-приколы</h2>
-  <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="GIF 1" />
-  <img src="https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif" alt="GIF 2" />
-</section>
+  <section id="quote">
+    <blockquote style="font-style: italic; font-size: 1.4em; color: #555;">
+      "Живи ярко, мечтай громко, и никогда не сдавайся — ведь ты легенда!"
+    </blockquote>
+  </section>
 
-<section id="quote">
-  <blockquote>«Живи ярко, смейся громко и всегда будь собой!»</blockquote>
-</section>
-  <section id="countdown" style="margin: 40px 0; text-align: center;">
-  <h2>⏰ Обратный отсчёт до твоего дня 🎉</h2>
-  <div id="timer" style="font-size: 1.8em; color: #e91e63; margin-top: 10px;"></div>
-</section>
+  <section id="video">
+    <h2>🎬 Видео</h2>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+  </section>
 
-<script>
-  const countdownDate = new Date("2025-08-06T00:00:00").getTime();
-  const timer = document.getElementById("timer");
+  <section id="music">
+    <h2>🎵 Музыка</h2>
+    <audio controls autoplay loop>
+      <source src="music/song.mp3" type="audio/mpeg" />
+      Ваш браузер не поддерживает аудио.
+    </audio>
+  </section>
 
-  const updateCountdown = () => {
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
+  <section id="countdown">
+    <h2>⏰ До праздника осталось:</h2>
+    <p id="timer" style="font-size: 1.5em;"></p>
+  </section>
 
-    if (distance <= 0) {
-      clearInterval(countdownInterval);
-      timer.innerHTML = "🎉 Наступил День Рождения! Поздравляем, Серёжа!";
-      return;
+  <section id="gift">
+    <h2>🎁 У тебя есть подарок!</h2>
+    <button onclick="document.getElementById('surprise').style.display='block'; this.style.display='none';">
+      Открыть подарок 🎉
+    </button>
+    <div id="surprise" style="display:none; margin-top: 25px;">
+      <p style="font-size: 1.5em; color: #e91e63;">Ты заслужил отдых, веселье и торт! 🍰😎</p>
+      <img src="images/cake.jpg" alt="Торт для Серёжи">
+    </div>
+  </section>
+
+  <section>
+    <h2>🕹 Колесо пожеланий</h2>
+    <button onclick="spinWish()">Получить пожелание</button>
+    <p id="wishResult" style="font-size: 1.3em; margin-top: 15px;"></p>
+  </section>
+
+  <section>
+    <h2>🤖 Серёжа-бот</h2>
+    <button onclick="serBot()">Спросить у Серёжи</button>
+    <p id="serAnswer" style="margin-top:10px;"></p>
+  </section>
+
+  <section>
+    <h2>📘 Инструкция: Как выжить с Серёжей</h2>
+    <ul style="max-width:600px; margin:auto; text-align: left;">
+      <li>— Не спорь: он прав, даже если нет</li>
+      <li>— Если улыбается — будет мем</li>
+      <li>— Всегда есть запасной шампур</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>С любовью от друзей ❤️</p>
+  </footer>
+
+  <script>
+    function spinWish() {
+      const wishes = [
+        "Море счастья 🌊",
+        "Железные нервы 🧠",
+        "Настоящих друзей 👬",
+        "Шашлыков без дождя ☀️",
+        "Побольше отпусков 🏖️"
+      ];
+      const random = wishes[Math.floor(Math.random() * wishes.length)];
+      document.getElementById("wishResult").textContent = random;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((distance / (1000 * 60)) % 60);
-    const seconds = Math.floor((distance / 1000) % 60);
-
-    timer.innerHTML = `${days} дн ${hours} ч ${minutes} мин ${seconds} сек`;
-  };
-
-  const countdownInterval = setInterval(updateCountdown, 1000);
-  updateCountdown();
-</script>
-  <section id="gift" style="margin: 40px 0; text-align: center;">
-  <h2>🎁 У тебя есть подарок!</h2>
-  <button onclick="document.getElementById('surprise').style.display='block'; this.style.display='none';" style="
-    padding: 12px 25px;
-    font-size: 1.2em;
-    background-color: #ff4081;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    cursor: pointer;
-  ">
-    Открыть подарок 🎉
-  </button>
-
-  <div id="surprise" style="display:none; margin-top: 25px;">
-    <p style="font-size: 1.5em; color: #e91e63;">Ты заслужил отдых, веселье и торт! 🍰😎</p>
-    <img src="images/cake.jpg" alt="Торт для Серёжи" style="max-width: 300px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-  </div>
-</section>
-
-<section id="bio" class="bio">
-  <h2>👤 Кто такой Серёжа?</h2>
-  <p>Серёжа — душа компании, шашлычный мастер, мемолог и верный друг. Желаем тебе новых побед, весёлых дней и настоящего кайфа от жизни!</p>
-</section>
-
-<section id="video" class="video-section">
-  <h2>🎬 Видео</h2>
-  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-</section>
-
-<section id="music">
-  <h2>🎵 Музыка</h2>
-  <audio controls autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg" />
-    Ваш браузер не поддерживает аудио.
-  </audio>
-</section>
-
-
-<section id="telegram">
-  <a class="telegram-button" href="https://web.telegram.org/a/#1131736052">📬 Написать в Telegram</a>
-</section>
-
-<footer>
-  <p>С любовью от друзей ❤️</p>
-</footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script>
-  const duration = 3 * 1000;
-  const animationEnd = Date.now() + duration;
-  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
-
-  function randomInRange(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
-  const interval = setInterval(function () {
-    const timeLeft = animationEnd - Date.now();
-    if (timeLeft <= 0) {
-      return clearInterval(interval);
+    function serBot() {
+      const answers = [
+        "Берём мясо, соль и уголь!",
+        "Главное — не забыть мангал!",
+        "Позови всех и погнали!",
+        "Жду на даче. Уже жарю."
+      ];
+      document.getElementById("serAnswer").textContent =
+        answers[Math.floor(Math.random() * answers.length)];
     }
-    const particleCount = 50 * (timeLeft / duration);
-    confetti(Object.assign({}, defaults, {
-      particleCount,
-      origin: { x: randomInRange(0.1, 0.9), y: Math.random() - 0.2 }
-    }));
-  }, 250);
-</script>
+
+    const countDownDate = new Date("Aug 6, 2025 00:00:00").getTime();
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("timer").innerHTML = "🎉 Сегодня праздник!";
+      } else {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("timer").innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+      }
+    }, 1000);
+  </script>
 
 </body>
 </html>
