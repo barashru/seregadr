@@ -1,131 +1,187 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С Днём Рождения, Серёжа!</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
-            color: #333;
-            text-align: center;
-        }
-        header {
-            background: #ff4081;
-            color: white;
-            padding: 40px 20px;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-        nav {
-            background: #e91e63;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            padding: 30px 15px;
-        }
-        .photos img, .gifs img {
-            width: 90%;
-            max-width: 300px;
-            margin: 10px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        blockquote {
-            font-style: italic;
-            font-size: 1.3em;
-            color: #555;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-        .bio {
-            background: #fff5f8;
-        }
-        .video-section iframe {
-            width: 100%;
-            max-width: 560px;
-            height: 315px;
-            border: none;
-        }
-        audio {
-            margin-top: 20px;
-        }
-        footer {
-            background: #ff4081;
-            color: white;
-            padding: 20px;
-            font-size: 1em;
-        }
-        @media (min-width: 600px) {
-            .photos img, .gifs img {
-                width: 300px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>С Днём Рождения, Серёжа!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      background: #ff4081;
+      color: white;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2em;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    nav {
+      background: #e91e63;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    section {
+      padding: 25px 10px;
+    }
+    .photos img, .gifs img {
+      width: 100%;
+      max-width: 320px;
+      margin: 10px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    blockquote {
+      font-style: italic;
+      font-size: 1.2em;
+      color: #555;
+      max-width: 90%;
+      margin: 20px auto;
+    }
+    .bio {
+      background: #fff5f8;
+    }
+    .video-section iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+    }
+    audio {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 400px;
+    }
+    footer {
+      background: #ff4081;
+      color: white;
+      padding: 20px;
+      font-size: 1em;
+    }
+    /* Telegram кнопка */
+    .telegram-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #0088cc;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+    /* Конфетти */
+    .confetti {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
 </head>
 <body>
 
+<canvas class="confetti" id="confetti-canvas"></canvas>
+
 <header>
-    <h1>С Днём Рождения, Серёжа!</h1>
-    <p>Ты самый крутой! Желаем радости, здоровья и приключений! 🎉</p>
+  <h1>С Днём Рождения, Серёжа!</h1>
+  <p>Ты самый крутой! Желаем радости, здоровья и приключений! 🎉</p>
 </header>
 
 <nav>
-    <a href="#photos">Фото</a>
-    <a href="#gifs">GIF</a>
-    <a href="#quote">Цитата</a>
-    <a href="#bio">О тебе</a>
-    <a href="#video">Видео</a>
-    <a href="#music">Музыка</a>
+  <a href="#photos">Фото</a>
+  <a href="#gifs">GIF</a>
+  <a href="#quote">Цитата</a>
+  <a href="#bio">О тебе</a>
+  <a href="#video">Видео</a>
+  <a href="#music">Музыка</a>
 </nav>
 
 <section id="photos" class="photos">
-    <h2>📸 Фото</h2>
-    <img src="images/photo1.jpg" alt="Фото 1">
-    <img src="images/photo2.jpg" alt="Фото 2">
+  <h2>📸 Фото</h2>
+  <img src="https://i.imgur.com/YJVHcTP.png" alt="Фото 1" />
+  <img src="https://i.imgur.com/KMQH5Ne.jpg" alt="Фото 2" />
 </section>
 
 <section id="gifs" class="gifs">
-    <h2>🎉 GIF-приколы</h2>
-    <img src="images/gif1.gif" alt="GIF 1">
-    <img src="images/gif2.gif" alt="GIF 2">
+  <h2>🎉 GIF-приколы</h2>
+  <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="GIF 1" />
+  <img src="https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif" alt="GIF 2" />
 </section>
 
 <section id="quote">
-    <blockquote>«Живи ярко, смейся громко и всегда будь собой!»</blockquote>
+  <blockquote>«Живи ярко, смейся громко и всегда будь собой!»</blockquote>
 </section>
 
 <section id="bio" class="bio">
-    <h2>👤 Кто такой Серёжа?</h2>
-    <p>Серёжа — душа компании, шашлычный мастер, мемолог и верный друг. Желаем тебе новых побед, весёлых дней и настоящего кайфа от жизни!</p>
+  <h2>👤 Кто такой Серёжа?</h2>
+  <p>Серёжа — душа компании, шашлычный мастер, мемолог и верный друг. Желаем тебе новых побед, весёлых дней и настоящего кайфа от жизни!</p>
 </section>
 
 <section id="video" class="video-section">
-    <h2>🎬 Видео</h2>
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+  <h2>🎬 Видео</h2>
+  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
 </section>
 
 <section id="music">
-    <h2>🎵 Музыка</h2>
-    <audio controls autoplay loop>
-        <source src="music/theme.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-    </audio>
+  <h2>🎵 Музыка</h2>
+  <audio controls autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg" />
+    Ваш браузер не поддерживает аудио.
+  </audio>
+</section>
+
+<!-- Telegram Кнопка -->
+<section id="telegram">
+  <a class="telegram-button" href="https://web.telegram.org/a/#1131736052">📬 Написать в Telegram</a>
 </section>
 
 <footer>
-    <p>С любовью от друзей ❤️</p>
+  <p>С любовью от друзей ❤️</p>
 </footer>
+
+<!-- JS для конфетти -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  const duration = 3 * 1000;
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  const interval = setInterval(function () {
+    const timeLeft = animationEnd - Date.now();
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+    const particleCount = 50 * (timeLeft / duration);
+    confetti(Object.assign({}, defaults, {
+      particleCount,
+      origin: { x: randomInRange(0.1, 0.9), y: Math.random() - 0.2 }
+    }));
+  }, 250);
+</script>
 
 </body>
 </html>
