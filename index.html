@@ -131,6 +131,36 @@
 <section id="quote">
   <blockquote>«Живи ярко, смейся громко и всегда будь собой!»</blockquote>
 </section>
+  <section id="countdown" style="margin: 40px 0; text-align: center;">
+  <h2>⏰ Обратный отсчёт до твоего дня 🎉</h2>
+  <div id="timer" style="font-size: 1.8em; color: #e91e63; margin-top: 10px;"></div>
+</section>
+
+<script>
+  const countdownDate = new Date("2025-08-06T00:00:00").getTime();
+  const timer = document.getElementById("timer");
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    if (distance <= 0) {
+      clearInterval(countdownInterval);
+      timer.innerHTML = "🎉 Наступил День Рождения! Поздравляем, Серёжа!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    timer.innerHTML = `${days} дн ${hours} ч ${minutes} мин ${seconds} сек`;
+  };
+
+  const countdownInterval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
 
 <section id="bio" class="bio">
   <h2>👤 Кто такой Серёжа?</h2>
