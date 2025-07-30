@@ -161,6 +161,26 @@
   const countdownInterval = setInterval(updateCountdown, 1000);
   updateCountdown();
 </script>
+  <section id="gift" style="margin: 40px 0; text-align: center;">
+  <h2>🎁 У тебя есть подарок!</h2>
+  <button onclick="document.getElementById('surprise').style.display='block'; this.style.display='none';" style="
+    padding: 12px 25px;
+    font-size: 1.2em;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+  ">
+    Открыть подарок 🎉
+  </button>
+
+  <div id="surprise" style="display:none; margin-top: 25px;">
+    <p style="font-size: 1.5em; color: #e91e63;">Ты заслужил отдых, веселье и торт! 🍰😎</p>
+    <img src="images/cake.jpg" alt="Торт для Серёжи" style="max-width: 300px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  </div>
+</section>
 
 <section id="bio" class="bio">
   <h2>👤 Кто такой Серёжа?</h2>
